@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Flip</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="card-flip-btn.css">
+    <script src="card-flip-btn.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Macondo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+VN:wght@100..400&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Edu+QLD+Beginner:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Macondo&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+VN:wght@100..400&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: #141414;
+            color: rgb(0, 0, 0);
+        }
+        .container{
+            display: flex;
+            height: 612px;
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+            /* background-color: #141414; */
+            border-radius: 50px;
+        }
+        .inner{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s linear;
+            border-radius: 20px;
+        }
+        .container:hover .inner{
+            transform: rotateY(180deg);
+        }
+        .inner-front,.inner-back{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            
+        }
+        .inner-front{
+            background-color: rgb(4, 3, 12);
+            border-radius: 120px 50px;
+
+        }
+        .inner-back{
+            background:linear-gradient(135deg, black,#111111,rgb(53, 53, 0),rgb(110, 44, 0),rgba(0, 4, 66, 1),rgb(39, 39, 39),black);
+            transform: rotateY(180deg);
+            border-radius: 50px 120px;
+            color: white;
+        }
+        .profile{
+            height: 145px;
+            width: 145px;
+            border: 4px solid gold;
+            border-radius: 50%;
+            background-color: #fff;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .front-content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 15px 25px;
+            background-color: transparent;
+        }
+        h2{
+            margin-top: 15px;
+            text-align: center;
+            font-family: "Ubuntu Mono", monospace;
+            font-weight: 700;
+            font-style: normal;
+            color:white;
+        }
+        h3{
+            margin-bottom: 12px;
+            font-family: "Ubuntu Mono", monospace;
+            font-weight: 400;
+            font-style: italic;
+            color: white;
+                    }
+        p{
+            text-align: center;
+            font-family: "Ubuntu Mono", monospace;
+            font-weight: 550;
+            color: gold;
+        }
+        .back-content{
+            margin: 20px;
+            text-align: center;
+        }
+        a{
+            text-align: center;
+            font-family: "Ubuntu Mono", monospace;
+            font-weight: 900;
+            font-style: normal;
+            color: white;
+        }
+        .description{
+            color: rgb(135, 251, 255);
+        }.icons{
+            color:gold;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <div class="inner-front">
+                <div class="front-content">
+                    <div class="profile">
+                    <img src="akash-profile.jpeg" alt="human" style="height: 100%; width: 100%; object-fit: cover;">
+                    </div>
+                    <h2>Know more about Akash Giri</h2>
+                    <p>I am Akash Giri . I secured 7th rank in district in HS exam. After that I cleared many Entrance exmas like JEE MAINS, JEE ADVANCED, WBJEE. Then I take admission in NIT DURGAPUR college for pursuing my B Tech degree in CSE. Till now I have learned C,CPP, JAVA, JAVASCRIPT , PYTHON and still learning and investing my time on Web Developement and DATA SCIENCE. Continuing......</p>
+                    <h3>Follow me on</h3>
+                <div class="icons" style="display: flex; gap: 9px;">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                </div>
+            </div>
+            <div class="inner-back">
+               <div class="back-content" style="display: flex; flex-direction: column;align-items: center; gap:25px; align-content: center;">
+                    <div class="facebook" style="margin-top: 40px;">
+                        <h3 class="description">Visit my facebook page</h3>
+                        <button type="submit" data-url="https://www.facebook.com/akash.giri.853099/grid"  class="bubbly-button  button"><a href="https://www.facebook.com/akash.giri.853099/grid" target="_blank" style="text-decoration: none;">Click me</a></button>
+                    </div>
+                    <div class="instagram">
+                        <h3 class="description">Visit my instagram pics</h3>
+                        <button type="submit" data-url="https://www.instagram.com/akashphysics/" class="bubbly-button button"><a href="https://www.instagram.com/akashphysics/" target="_blank" style="text-decoration: none;">Click me</a></button>
+                    </div>
+                    <div class="youtube">
+                        <h3 class="description">Visit my youtube channel</h3>
+                        <button type="submit" data-url="https://www.youtube.com/@physicskafeel4115" class="bubbly-button button"><a href="https://www.youtube.com/@physicskafeel4115" target="_blank" style="text-decoration: none;">Click me</a></button>
+                    </div>
+                    <div class="github">
+                        <h3 class="description">Visit my github account</h3>
+                        <button type="submit" data-url="https://github.com/ag81166" class="bubbly-button button"><a href="https://github.com/ag81166" target="_blank" style="text-decoration: none;">Click me</a></button>
+                    </div>
+               </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
